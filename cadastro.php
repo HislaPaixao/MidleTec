@@ -19,7 +19,7 @@ $escola = $statement->rowCount();
     <link rel="stylesheet" href="css/cadastrocss.css">
     <title>MidleTech Sing-in</title>
 </head>
-
+<!-- a -->
 <body>
     <?php include_once "nav.html"; ?>
 
