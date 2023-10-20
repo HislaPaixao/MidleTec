@@ -1,5 +1,5 @@
 <?php 
-require_once 'src/conexao.php';
+require_once '../src/conexao.php';
 $dbh = conexao::getConexao();
 
 $query = "SELECT * FROM midletech.instituicoes;";
@@ -9,25 +9,26 @@ $statement = $dbh->query($query);
 $escola = $statement->rowCount();
 
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/boot.css">
-    <link rel="stylesheet" href="css/cadastrocss.css">
+    <link rel="stylesheet" href="../asset/css/boot.css">
+    <link rel="stylesheet" href="../assets/css/cadastrocss.css">
     <title>MidleTech Sing-in</title>
 </head>
 <!-- ab -->
 <body>
-    <?php include_once "nav.html"; ?>
+    <?php include_once "../nav.html"; ?>
 
 
     <h1>Cadastro</h1>
     <fieldset>
         <legend>Dados do Aluno</legend>
-        <form action="CadastroADD.php" method="POST" enctype="multipart/form-data">
+        <form action="../cadastro/CadastroADD.php" method="POST" enctype="multipart/form-data">
             <label for="nome">Nome*</label>
             <input type="text" name="nome" placeholder="Nome" maxlength="50" required class="input_nome">
             <input type="text" name="sobrenome" placeholder="Sobrenome" required maxLength="50" class="input_nome"> 
