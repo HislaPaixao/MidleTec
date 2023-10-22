@@ -1,5 +1,4 @@
 /*TOPO*/
-
 .header_menu{
     width: 100%;
     background-color: #fff;
@@ -30,6 +29,11 @@
     margin: 10px 20px;
 }
 
+.nav_menu ul{
+    display: flex;
+    justify-content: space-between;
+}
+
 .header_menu .div_menu .nav_menu ul{
     display: flex;
     align-items: stretch;
@@ -54,139 +58,448 @@
     background-color: darkcyan;
     opacity: 0.5;
 }
-
 /*FIM TOPO*/
 
 /*CAPA*/
 .formato_capa{
     display: flex;
-    background-color: #fff;
     max-width: 1500px;
     margin: 0 auto;
 }
 
-.formato_capa .capa{
+.capa{
     display: flex;
     justify-content: space-between;
-    flex-wrap: nowrap;
+    max-width: 1500px;
 }
 
-.formato_capa .capa .box{
+.box{
     margin: 0 auto;
     text-align: center;
     display: flex;
     flex-basis: 180%;
-    max-width: 1500px;
     margin-bottom: 50px;
 }
 
-.formato_capa .capa .box .box_content .box_2{
-    border: purple 2px solid;
-    margin-top: 100px;
+.box_content{
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.formato_capa .capa .box .box_content .box_2 h1{
+.formato_capa .capa .box2 h1{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 3em;
     color: darkcyan;
     font-weight: 700;
     text-align: center;
+    margin-top: 50px;
 }
+
+.formato_capa .capa .box2 p{
+    font-size: 1.700em;
+    color: #0f2423;
+    font-weight: 400;
+    text-align: center;
+    margin: 30px 20px;
+}
+
+.formato_capa .capa .box2 p .btn{
+    background-color: darkcyan;
+    color:#fff;
+    font-size: 0.8em;
+    padding: 10px 40px;
+    border-radius: 5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+}
+
+.formato_capa .capa .box2 p .btn:hover{
+    color: black;
+    background-color: darkcyan;
+    opacity: 0.9;
+}
+
 /*FIM CAPA*/
 
-/*COMEÇO 1ª DOBRA*/
-
+/*COMEÇO BLOG*/
 .blog{
     max-width: 1300px;
     margin: 0 auto;
     background-color: white;
     height: 1500px;
 }
+/*FIM BLOG*/
 
-/*FIM 1ª DOBRA*/
-
-/*LOGIN*/
-.div2 {
-    /* border-radius: 50px;*/
-    align-self: center;
-    align-items: center;
-    height: 380px;
-    width: 50%;
-    /* border: 3px solid black;*/
-    margin-left: 10%;
-    margin-top: 10%;
-}
-
-.size {
-    border-radius: 50px;
-    border: 2px solid #72cebf;
-    font-size: 150%;
-    /* text-align: center; */
-    align-items: center;
+/*INICIO SESSÃO ARTIGOS*/
+.main_blog{
+    max-width: calc(1300px - 40px);
+    padding:0 20px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 10%;
-    width: 60%;
-    height: 40px;
-    background-color: white;
-    padding-left: 30px;
-    padding-right: 30px;
-    text-align: center;
-}
-
-.ali-rig {
-    display: flex;
-    text-align: justify;
-    flex-direction: row;
+    justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: -3%;
-    margin-left: 12%;
-    gap: 60px;
 }
 
-button {
-    width: 90px;
-    height: 40px;
+.main_blog_header{
+    flex-basis: 100%;
+    margin: 30px 0;
+}
+
+.main_blog_header h1{
+color:#333;
+margin-bottom: 5px;
+font-size: 1.8em;
+}
+
+.main_blog article{
+flex-basis: calc(25% - 20px);
+margin-bottom: 30px;
+opacity: 0.7;
+}
+
+
+.main_blog article:hover{
+     opacity:1;
+}
+    
+.main_blog article p{
+   margin: 10px 0;
+}
+
+.main_blog article img{
+    width: 100%;
+}
+
+.category{
+    margin: 10px 0;
+    font-size: 0.875em;
+    color:darkcyan;
+}
+
+.main_blog article h2{
+    font-weight: 300;
+    color:#333;
+    font-size: 1.2em;
+}
+
+.main_blog article h2 a{
+    color:#333;
+}
+/*FIM SESSÃO ARTIGOS*/
+
+/*INCICIO DOBRA CURSOS*/
+.main_course{
+    width:100%;
+
+}
+
+.main_course_header{
+    max-width: 780px;
+    margin: 0 auto;
     text-align: center;
-    background-position-x: 60px;
-    background-color: #72cebf;
-    padding: 0;
-    border-radius: 20px;
-    cursor: pointer;
-    color: white;
-    font-size: 18px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-left: 50%;
-    text-shadow: 1px 1px 1px black;
+    color: #333;
+    margin-bottom: 40px;
 }
 
-button:hover {
-    background-color: #96dcd1;
-    box-shadow: 2px 2px 2px black;
+.main_course_header img{
+    width: 300px;
+    margin-top: 5px;
+    margin-bottom: 2px;
 }
 
-.senha{
-    width: 90px;
-    height: 40px;
+.main_course_header h1{
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.main_course_content{
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    
+
+}
+.main_course_content article{
+    flex-basis:48%;
+    margin: 20px 0;
+    background-color: #9ceee0;
+    border-radius: 5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    padding: 20px;
+}
+
+.main_course_content article h2{
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.main_course_content article p{
+    font-size: 0.9em;
+    color: #333;
+    
+}
+/*FIM DOBRA CURSOS*/
+
+
+/*INICIO DOBRA REVIEWS*/
+.main_course_fullwidth{
+    width: 100%;
+    padding: 40px 0;
+}
+
+.main_course_ratting_content{
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.main_course_rating_title{
+    color:#0f2423;
     text-align: center;
-    background-position-x: 60px;
-    background-color: #72cebf;
-    padding: 0;
-    border-radius: 20px;
-    cursor: pointer;
-    color: white;
-    font-size: 18px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-left: 50%;
-    text-shadow: 1px 1px 1px black;
 }
 
-.senha:hover{
+.main_course_rating_title h2{
+    font-size: 2.4em;
+    margin-bottom: 20px;
+}
+
+.main_course_ratting_content_comment{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.main_course_ratting_content_comment h2{
+    color: #0f2423;
+}
+
+.main_course_ratting_content_comment>header{
+    flex-basis: 100%;
+    color:#0f2423;
+    text-align: center;
+    margin-top:20px;
+    font-size: 1.8em;
+    margin-bottom:20px;
+}
+
+.main_course_ratting_content_comment > article{
+    flex-basis:45%;
+    margin: 20px 15px;
     background-color: #96dcd1;
-    box-shadow: 2px 2px 2px black;
+    border-radius: 5px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    padding: 20px;
+    color: #0f2423;
 }
-/*FIM LOGIN*/
 
+.main_course_ratting_content_comment > article h3{
+    font-size: 1.2em;
+    margin-bottom: 4px;
+}
+
+.main_course_ratting_content_comment > article img{
+    width: 15px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+.main_course_rating_title img{
+    width: 300px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+} 
+/*FIM DOBRA REVIEWS*/
+
+/* INICIO DOBRA TUTOR */
+.main_tutor{
+    width: 100%;
+    background-color: darkcyan;
+}
+
+.main_tutor_content{
+    max-width: calc(1300px  - 80px);
+    padding: 40px;
+    margin: 0 auto;
+    color:#0f2423;
+    text-align: center;
+}
+
+.main_tutor_content>header h1{
+    font-size: 2rem;
+    margin-bottom: 4px;
+}
+
+.main_tutor_content>header p {
+    margin-bottom: 20px;
+    padding: 0 20px;
+    font-size: 1.2rem;
+}
+
+.main_tutor_content_img{
+    margin: 20px auto;
+}
+
+.main_tutor_content_img img{
+    max-width: 200px;
+    border-radius: 50%;
+    padding: 3px;
+    background-color: #fff;
+}
+.main_tutor_content_history h2{
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    
+}
+
+.main_tutor_content_history p{
+    margin-bottom: 20px;
+    padding: 0 20px;
+    font-size: 1.2rem;
+
+}
+
+.main_tutor_social_network{
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #72cebf;
+    border-radius: 5px;
+    padding: 20px;
+    
+    
+}
+.main_tutor_social_network>header{
+    flex-basis: 100%;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.main_tutor_social_network>header h2{
+    color: #0f2423;
+}
+
+.main_tutor_social_network>article{
+    flex-basis: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+   
+   
+}
+
+.main_tutor_social_network>article h3{
+   font-size: 0.8rem;
+   margin-bottom: 10px;
+}
+
+.main_tutor_social_network>article h3 a{
+    background-color:#fff;
+    color: darkcyan;
+    border-radius: 5px;
+    padding: 10px 20px;
+    display: flex;
+}
+
+.main_tutor_social_network>article h3 a:hover{
+    background-color: #2d3142;
+    color: #fff;
+}
+/* FIM DOBRA TUTOR */
+
+
+.main_optin_footer{
+    width: 100%;
+    background-color: #f7f7f7;
+}
+.main_optin_footer_content{
+    max-width: 1300px;
+    padding: 40px 0;
+    text-align: center;
+    color: #333;
+    margin: 0 auto;
+}
+.main_optin_footer_content header h1{
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+}
+.main_optin_footer_content .btn{
+    color:#fff;
+    background-color: darkcyan;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+}
+
+.main_optin_footer_content .btn:hover{
+    color: #0f2423;
+    background-color: darkcyan;
+    opacity: 0.9;
+}
+
+.main_footer{
+    max-width: 1300px;
+    padding: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 20px;
+    color:#333;
+ }
+ .main_footer header{
+     flex-basis: 100%;
+ }
+ .main_footer header h1{
+     font-size: 1.4rem;
+     margin-bottom: 40px;
+ }
+ .main_footer article h2{
+     margin-bottom: 20px;
+ }
+ .main_footer article ul li{
+     list-style: none;
+     margin: 5px 0;
+ }
+ .main_footer article ul li a{
+     color:#333;
+ }
+ .main_footer article ul li a:hover{
+     text-decoration: underline;
+ }
+ .main_footer_our_pages, .main_footer_links{
+     flex-basis: 25%;
+     
+ }
+ 
+ .main_footer_about{
+     flex-basis: 50%;
+ }
+ 
+ .main_footer_rights{
+     width: 100%;
+     background-color: #f7f7f7;
+     text-align: center;
+     padding: 20px 0;
+     font-size: 0.9rem;
+     color:#666;
+     font-weight: 300;
+     border-top: 1px solid #ebebeb;
+ }
+ /* FIM DOBRA RODAPÉ */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Ubuntu', sans-serif;
+}
 
 body {
     /* height: fit-content; */
@@ -196,39 +509,4 @@ body {
     color: black;
     background-repeat: no-repeat;
     width: 100%;
-}
-
-input[type='text'] {
-    background-image: url("../img/aluno.png");
-    background-repeat: no-repeat;
-    position: right;
-    background-size: 23px;
-    background-position-y: 0.450rem;
-    background-position-x: 4px;
-    /* padding-left: 30px; */
-}
-
-input[type='password'] {
-    background-image: url("../img/senha.png");
-    background-repeat: no-repeat;
-    position: right;
-    background-size: 23px;
-    background-position-y: 6px;
-    background-position-x: 4px;
-}
-
-
-
-.nav_menu ul{
-    display: flex;
-    justify-content: space-between;
-}
-
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    font-size: 1rem;
-    font-family: 'Ubuntu', sans-serif;
 }
