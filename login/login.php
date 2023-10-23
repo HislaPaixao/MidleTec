@@ -38,11 +38,9 @@
                             <input type="password" name="senha" placeholder="Senha" class="size">
                         </div>
                         <button type="submit"><b>Entrar</b></button>
-                        <p class="ali-rig"><a href="../recuperar senha/senha.php" class="senha">Recuperar Senha</a></p>
+                        <p class="ali-rig"><a href="../recuperar senha/senha.php" class="senha">Esqueci minha senha</a></p>
                         <p class="ali-rig"><a href="../usuário/index.php" class="senha">Não possuo cadastro</a></p>
                     </form>
-                    
-
                 </div>
 
                 <div class="main_login_img">
