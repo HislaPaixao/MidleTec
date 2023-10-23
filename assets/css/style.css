@@ -321,11 +321,13 @@ opacity: 0.7;
 /* INICIO DOBRA TUTOR */
 .main_tutor{
     width: 100%;
-    background-color: darkcyan;
+    margin: 0 auto;
 }
 
 .main_tutor_content{
-    max-width: calc(1300px  - 80px);
+    background-color: darkcyan;
+
+    width: 1400px;
     padding: 40px;
     margin: 0 auto;
     color:#0f2423;

@@ -31,22 +31,19 @@
 
                     <form action="../index.php" method="POST">
                         <div class="main_login_cabeçalho">
-                            <h1>Login</h1>
+                            <h1>Recuperação de Senha</h1>
                         </div>
                         <div class="main_login_input">
-                            <input type="text" name="matricula" placeholder="Aluno" class="size">
-                            <input type="password" name="senha" placeholder="Senha" class="size">
+                            <input type="password" name="nova senha" placeholder="Insira seu email cadastrado" class="size">
                         </div>
-                        <button type="submit"><b>Entrar</b></button>
-                        <p class="ali-rig"><a href="../recuperar senha/senha.php" class="senha">Recuperar Senha</a></p>
-                        <p class="ali-rig"><a href="../usuário/index.php" class="senha">Não possuo cadastro</a></p>
+                        <button type="submit"><b>Enviar</b></button>
                     </form>
                     
 
                 </div>
 
                 <div class="main_login_img">
-                    <img src="../assets/img/login.svg" alt="">
+                    <img src="../assets/img/senha.svg" alt="Recuperação de Senha" width="750" height="500">
                 </div>
             </div>
         </div>

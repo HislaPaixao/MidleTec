@@ -44,6 +44,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    border-radius: 50px;
+    border: 2px solid #72cebf;
+    height: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+    
 }
 
 .main_login_form button{
@@ -51,14 +57,13 @@
     width: 100%;
     margin: 7px 0;
     padding: 10px;
-    border-radius: 10px;
+    border: 2px solid #72cebf;
+    border-radius: 50px;
     margin-bottom: 20px;
     cursor: pointer;
 }
 
 /* .size {
-    border-radius: 50px;
-    border: 2px solid #72cebf;
     font-size: 150%;
     align-items: center;
     display: flex;
@@ -75,10 +80,14 @@
 
 .ali-rig {
     text-align: center;
+    font-size: 15px;
+    font-weight: 700;
 }
 
-.ali-rig p a {
-    background-color: blue;
+
+.ali-rig:hover{
+    box-shadow: 2px 2px 2px black;
+    border-radius: 50px;
 }
 
 button:hover {

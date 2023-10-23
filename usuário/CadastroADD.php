@@ -25,8 +25,8 @@ $dbh = Conexao::getConexao();
 
 
     
-    $query = "INSERT INTO midletech.usuarios (nome, sobrenome, senha, email, matricula, ddd, telefone, dtnasc, genero, cep, estado, cidade, instituicao, perfil)  
-        VALUES ( :nome, :sobrenome,  :senha, :email, :matricula, :ddd, :telefone, :dtnasc, :genero, :cep, :estado, :cidade, :instituicao, :perfil );";
+    $query = "INSERT INTO midletech.usuarios (nome, sobrenome, senha, email, matricula, ddd, telefone, dtnasc, genero, cep, estado, cidade, instituicao, perfil, status)  
+        VALUES ( :nome, :sobrenome,  :senha, :email, :matricula, :ddd, :telefone, :dtnasc, :genero, :cep, :estado, :cidade, :instituicao, :perfil, :status );";
 
 $statement = $dbh->prepare($query);
 $statement->bindParam(':nome',$nome);
@@ -43,6 +43,7 @@ $statement->bindParam(':estado',$estado);
 $statement->bindParam(':cidade',$cidade);
 $statement->bindParam(':instituicao',$instituicao);
 $statement->bindParam(':perfil',$perfil);
+$statement->bindParam(':status',$status);
 $statement->bindParam(':sobrenome',$sobrenome);
 
 
