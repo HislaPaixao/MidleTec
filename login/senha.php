@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -8,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/boot.css">
-    <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/login.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 
     <title>login</title>
 </head>
@@ -32,22 +29,21 @@
             <div class="main_login_content">
                 <div class="main_login_form">
 
-                    <form action="alunologincontrole.php" method="POST">
+                    <form action="../index.php" method="POST">
                         <div class="main_login_cabeçalho">
-                            <h1>Login</h1>
+                            <h1>Recuperação de Senha</h1>
                         </div>
                         <div class="main_login_input">
-                            <input type="text" name="matricula" placeholder="Matrícula Aluno" class="size">
-                            <input type="password" name="senha" placeholder="Senha" class="size">
+                            <input type="password" name="nova senha" placeholder="Insira seu email cadastrado" class="size">
                         </div>
-                        <button type="submit"><b>Entrar</b></button>
-                        <p class="ali-rig"><a href="senha.php" class="senha">Esqueci minha senha</a></p>
-                        <p class="ali-rig"><a href="../usuario/index.php" class="senha">Não possuo cadastro</a></p>
+                        <button type="submit"><b>Enviar</b></button>
                     </form>
+                    
+
                 </div>
 
-                <div >
-                    <img src="../assets/img/login.svg" alt="" width="750" height="500">
+                <div class="main_login_img">
+                    <img src="../assets/img/senha.svg" alt="Recuperação de Senha" width="750" height="500">
                 </div>
             </div>
         </div>

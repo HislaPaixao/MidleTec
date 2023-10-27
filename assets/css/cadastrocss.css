@@ -1,3 +1,71 @@
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 3px 3px 3px #9ceee0;
+}
+
+fieldset {
+    border: none;
+}
+
+/*margin-right: 25%;
+    padding: 1rem;
+    font-size: 0,8rem;
+    /* border-radius: 20px; */
+/* border: 1rem #9ceee0; */
+/*
+    margin-left: 2%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 3px 3px 3px #9ceee0;
+    font-weight: bold;
+}*/
+
+form select {
+    border-radius: 30px;
+    background-color: #fff;
+    color: black;
+    height: 30px;
+}
+
+form label {
+    font-size: 1 rem;
+    font-weight: bold;
+    color: black;
+    margin-top: 1rem;
+}
+
+
+form input[type='date'] {
+    width: 180px;
+}
+
+
+form select {
+    width: 350px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* form input::placeholder{
+    margin-left: 4px;
+} */
+
+button {
+    font-size: 1.2rem;
+    width: 100%;
+    margin: 7px 0;
+    padding: 10px;
+    border: 2px solid #72cebf;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+button:hover {
+    background-color: #96dcd1;
+    box-shadow: 2px 2px 2px black;
+}
+
+/*COMEÇO LOGIN*/
+
 .login{
     max-width: 100%;
 }
@@ -13,129 +81,82 @@
     justify-content: space-between;
 }
 
-.ddd{
-    width: 60px;
-    padding: 0;
+.main_login_form{
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid darkcyan;
+    border-radius: 10px;
+    padding: 25px ;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
-h1 {
-    margin-left: 30%;
-    margin-top: 3%;
-    margin-bottom: 3%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-shadow: 3px 3px 3px #9ceee0;
-    font-size: 2rem;
-}
-
-body {
-    width: 100%;
-    /* background-size: cover; */
-    background-size: cover ;
-    height: 600px;
-    background-image: url("../img/bg06.png");
-    background-color: white;
-    color: black;
-    background-repeat: no-repeat;
-    min-height: 600px;
-    max-width: 1300px;
-    max-height: 700px;
-}
-
-fieldset{
-    margin-right: 25%;
-    padding: 1rem;
-    font-size: 0,8rem;
-    /* border-radius: 20px; */
-    /* border: 1rem #9ceee0; */
-    border: none;
-    margin-left: 2%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-shadow: 3px 3px 3px #9ceee0;
-    font-weight: bold;
-}
-
-
- form{
-    text-shadow: none;
-}
-
-fieldset legend{
-    font-size: 1.5rem;
-}
-
-form select{
-    border: #72cebf solid 2px;
-    border-radius: 30px;
-    background-color: #fff;
-    color: black;
-    height: 30px;
-    gap: 2px;
-    margin: 5px;
-}
-
-form label{
-    font-size: 1 rem;
-    font-weight: bold;
-    color: black;
-    margin-top: 1rem;
-}
-
-form input{
-    margin: 5px;
-    border-radius: 30px;
-    border: solid #72cebf 2px;
-    background-color: white;
-    gap: 2px;
-    height: 30px;
-    color: black;
+.main_login_cabeçalho h1{
     text-align: center;
-    padding:0 20px;
-    width: 300px;
+    color: darkcyan;
+    margin: 5px 0;
+    padding: 10px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 
-form input[type='radio']{
-    width: 5%;
-    height: 15px;
-    margin-top: 10px;
+.main_login_input input{
+    width: 100%;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 10px;
+    margin: 5px 0;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 50px;
+    border: 2px solid #72cebf;
+    height: 40px;
+    
+}
+
+
+.main_login_form button{
+    font-size: 1.2rem;
+    width: 100%;
+    margin: 7px 0;
+    padding: 10px;
+    border: 2px solid #72cebf;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+/* .size {
+    font-size: 150%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10%;
+    width: 60%;
+    height: 40px;
+    background-color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+} */
+
+.ali-rig {
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
     margin-bottom: 10px;
 }
 
-.input_nome{
-    width: 200px;
+.ali-rig a{
+    color: darkcyan;
 }
 
-form input[type='date']{
-    width: 180px;
-}
-
-form input[type='time']{
-    width: 150px;
-}
-
-form select{
-    width: 350px;
-    padding:0 20px;
-    text-align: center;
-}
-
-/* form input::placeholder{
-    margin-left: 4px;
-} */
-
-button {
-    width: 90px;
-    height: 40px;
-    text-align: center;
-    background-position-x: 60px;
-    background-color: #72cebf;
-    padding: 0;
-    border-radius: 20px;
-    cursor: pointer;
-    color: white;
-    font-size: 18px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin-left: 50%;
-    text-shadow: 1px 1px 1px black;
+.ali-rig:hover{
+    box-shadow: 2px 2px 2px black;
+    border-radius: 50px;
 }
 
 button:hover {
@@ -143,8 +164,34 @@ button:hover {
     box-shadow: 2px 2px 2px black;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+/* input[type='text'] {
+    background-image: url("../img/aluno.png");
+    background-repeat: no-repeat;
+    position: right;
+    background-size: 23px;
+    background-position-y: 0.450rem;
+    background-position-x: 4px;
+     padding-left: 30px; 
 }
+
+input[type='password'] {
+    background-image: url("../img/senha.png");
+    background-repeat: no-repeat;
+    position: right;
+    background-size: 23px;
+    background-position-y: 6px;
+    background-position-x: 4px;
+} */
+
+.senha{
+    color: black;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 12pt;
+}
+/* 
+.senha:hover{
+    text-shadow: 3px 3px 3px #9ceee0;
+} */
+
+
+/*FIM LOGIN*/

@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+if (isset($_SESSION["idusuario"])) {
+header('location:material/index.php');
+}else
+
+//exit;  
+// } else {
+//     header('location:login.php');
+// }
+//  require_once '';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -7,6 +20,8 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Home</title>
 </head>
+
+
 
 <body>
 
@@ -18,17 +33,19 @@
             </a>
             <nav class="nav_menu">
                 <ul>
-                    <li><a href="cadastro/cadastro.php">Cadastro</a></li>
+                    <li><a href="#ancora">Contato</a></li>
                     <li><a href="material/material.php">Material</a></li>
                     <li><a href="instituição/instituicao.php">Instituição</a></li>
                     <li><a href="login/login.php">Login</a></li>
                 </ul>
+                
             </nav>
         </div>
     </header>
 
     <!--INICIO CAPA-->
     <main>
+
         <body>
             <div class="formato_capa">
                 <div class="capa">
@@ -41,7 +58,7 @@
                     <div class="box2">
                         <h1>BEM-VINDO</h1>
                         <p>Em nossa plataforma de aprendizado você encontrará as ferramentas e recursos necessários para expandir seus horizontes e alcançar seus objetivos educacionais.</p>
-                        <p><a href="usuário/index.php" class="btn">Cadastrar</a></p>
+                        <p><a href="usuario/index.php" class="btn">Cadastrar</a></p>
                     </div>
                 </div>
             </div>
@@ -312,7 +329,7 @@
                             <header>
                                 <h2>Tenha acesso à biblioteca e fóruns de discussão</h2>
                             </header>
-                            <p>Quer levar sua jornada acadêmica para o próximo nível? Com nossa assinatura premium, você terá acesso exclusivo a uma vasta biblioteca de materiais didáticos de alta qualidade e fóruns de discussão acadêmica, criando um ambiente de aprendizado colaborativo e enriquecedor. 
+                            <p>Quer levar sua jornada acadêmica para o próximo nível? Com nossa assinatura premium, você terá acesso exclusivo a uma vasta biblioteca de materiais didáticos de alta qualidade e fóruns de discussão acadêmica, criando um ambiente de aprendizado colaborativo e enriquecedor.
                             </p>
                         </article>
 
@@ -334,11 +351,11 @@
                 <!--FIM DOBRA TUTOR-->
 
                 <section class="main_footer">
-                    <header>
+                    <header >
                         <h1>Quer saber mais?</h1>
                     </header>
 
-                    <article class="main_footer_our_pages">
+                    <article class="main_footer_our_pages" >
                         <header>
                             <h2>Nossas Páginas</h2>
                         </header>
@@ -369,7 +386,7 @@
                             dos padrões da WEB seguindo as boas práticas</p>
                     </article>
                 </section>
-                <footer class="main_footer_rights">
+                <footer class="main_footer_rights" >
                     <p>ETC - Todos os direitos reservados.</p>
                 </footer>
                 <!-- FIM DOBRA RODAPÉ -->
