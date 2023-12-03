@@ -14,8 +14,6 @@
 .header_menu .div_menu .nav_menu {
     display: flex;
     flex-basis: 30%;
-    justify-content: flex-end;
-    padding-right: 25px;
 }
 
 .header_menu .div_menu .nav_menu h2 {
@@ -28,9 +26,10 @@
 }
 
 .logo_img {
-    display: flex;
-    flex-basis: 30%;
-    justify-content: flex-start;
+    flex-basis: 330px;
+    padding: 0 15px;
+    width: 290px;
+    /* CONFIGURAR PADDING APOS A CRIACAO DA LOGO(TOP LEFT RIGHT BOTTOM) */
 }
 
 .header_menu .div_menu .logo {
@@ -100,7 +99,7 @@
 .dropdown_menu {
     /* display: flex;
     flex-direction: column; */
-    margin-top: 6px;
+    margin-top: 5px;
     align-items: center;
     position: absolute;
     left: 0;
@@ -114,12 +113,16 @@
     transform: translateY(-10px);
     transition: opacity 150ms ease-in-out transform 150ms ease-in-out;
 
-    height: 136%;
+    height: 79%;
     /* caso seja inseridos mais opções no menu do usuario o campo height acima pode ser alterado para um tamanho acima de 100% ex(120%, 150%, 200%) */
     width: 100%;
     text-align: center;
+
 }
 
+/* .dropdown_menu.active{
+    opacity: 1;
+} */
 .dropdown_menu a:hover {
     background-color: darkcyan;
     color: black;
@@ -128,25 +131,30 @@
 
 .dropdown_menu a {
     padding: center;
+
     width: 100%;
     background-color: white;
     align-items: center;
     text-decoration: none;
+
     text-align: center;
     height: 35px;
     display: flex;
     color: darkcyan;
-    /* position: relative; */
+
+
 }
 
 .dropdown.active>.link .link:hover {
     color: black;
+
 }
 
 .dropdown.active>.link+.dropdown_menu {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+
 }
 
 .fotoPerfil {
@@ -154,14 +162,19 @@
     width: 50px;
     height: 50px;
     margin-left: 5px;
-    pointer-events: none;
-}
 
-.fotoPerfil img {
+    pointer-events: none;
+
+}
+.fotoPerfil img{
+
     width: 50px;
     border-radius: 50%;
     /* height: 50px fit-content; */
 }
+
+/*FIM TOPO*/
+
 
 /*FIM TOPO*/
 
@@ -226,22 +239,6 @@
     opacity: 0.9;
 }
 
-.capa .box2 p .btn {
-    background-color: darkcyan;
-    color: #fff;
-    font-size: 0.8em;
-    padding: 10px 40px;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-}
-
-.capa .box2 p .btn:hover {
-    color: black;
-    background-color: darkcyan;
-    opacity: 0.9;
-}
-
 /*FIM CAPA*/
 
 /*COMEÇO BLOG*/
@@ -281,6 +278,7 @@
     opacity: 0.7;
 }
 
+
 .main_blog article:hover {
     opacity: 1;
 }
@@ -297,6 +295,7 @@
     margin: 10px 0;
     font-size: 1.250em;
     color: darkcyan;
+
 }
 
 .main_blog article h2 {
@@ -314,16 +313,15 @@
 /*INCICIO DOBRA CURSOS*/
 .main_course {
     width: 100%;
+
 }
 
 .main_course_header {
     max-width: 780px;
-    margin-top: 70px;
-    margin: 70px auto;
+    margin: 0 auto;
     text-align: center;
     color: #333;
     margin-bottom: 40px;
-    /* position: relative; */
 }
 
 .main_course_header img {
@@ -366,6 +364,7 @@
 .main_course_content article p {
     font-size: 0.9em;
     color: #333;
+
 }
 
 /*FIM DOBRA CURSOS*/
@@ -380,43 +379,6 @@
 .main_course_ratting_content {
     max-width: 1300px;
     margin: 0 auto;
-    width: 1200px;
-}
-
-.main_course_ratting_content p .btn {
-    background-color: darkcyan;
-    color: #fff;
-    font-size: 0.8em;
-    padding: 10px 40px;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-}
-
-.main_course_ratting_content p .btn:hover {
-    color: black;
-    background-color: darkcyan;
-    opacity: 0.9;
-}
-
-.main_course_ratting_content p .btn2 {
-    background-color: darkcyan;
-    color: #fff;
-    font-size: 0.8em;
-    padding: 10px 40px;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    position: relative;
-    top: 50%;
-    left: 45%;
-    transform: translate(-50%, -50%);
-}
-
-.main_course_ratting_content p .btn2:hover {
-    color: black;
-    background-color: darkcyan;
-    opacity: 0.9;
 }
 
 .main_course_rating_title {
@@ -425,11 +387,6 @@
 }
 
 .main_course_rating_title h2 {
-    font-size: 2.4em;
-    margin-bottom: 20px;
-}
-
-.main_course_rating_title h3 {
     font-size: 2.4em;
     margin-bottom: 20px;
 }
@@ -483,143 +440,19 @@
 
 /*FIM DOBRA REVIEWS*/
 
-
-/*INICIO DOBRA A ESCOLA*/
-.main_school {
-    width: 100%;
-}
-
-.main_school p .btn {
-    background-color: darkcyan;
-    color: #fff;
-    font-size: 0.8em;
-    padding: 10px 40px;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-}
-
-.main_school p .btn:hover {
-    color: black;
-    background-color: darkcyan;
-    opacity: 0.9;
-}
-
-.main_school_content {
-    max-width: 1300px;
-    margin: 0 50px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.main_school_header {
-    flex-basis: 100%;
-    padding: 40px 0;
-    color: darkcyan;
-    flex-basis: calc(70% - 20px);
-
-}
-
-.main_school_header h1 {
-    font-size: 2.2em;
-    margin-bottom: 10px;
-}
-
-.main_school_content_left_content>header>p {
-    padding: 10px 10px;
-    background-color: darkcyan;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    color: #fff;
-    margin-bottom: 20px;
-}
-
-.main_school_content_left_content>header>p span {
-    margin-left: 20px;
-}
-
-.main_school_content_left_content>header>p a {
-    color: #fff;
-    font-size: 0.9em;
-}
-
-.main_school_content_left_social_network a:hover {
-    text-decoration: underline;
-}
-
-.main_school_content_left_content>header>h2 {
-    font-size: 1.2em;
-    margin-bottom: 20px;
-}
-
-.main_school_content_left_content>p {
-    margin-bottom: 20px;
-}
-
-.main_school_content_right {
-    flex-basis: 30%;
-}
-
-.main_school_content_right img {
-    width: 65%;
-    border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-}
-
-.main_school_list {
-    width: 100%;
-    background-color: #ebebeb;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.main_school_list>header {
-    flex-basis: 100%;
-    color: darkcyan;
-    margin-bottom: 20px;
-}
-
-.main_school_list>article {
-    flex-basis: calc(50% - 10px);
-    margin: 4px 0;
-}
-
-.main_school_list>article h3 {
-    font-weight: 300;
-}
-
-.main_school_adress {
-    flex-basis: 100%;
-    padding: 55px 0;
-    text-align: center;
-}
-
-.main_school_adress h2 {
-    font-size: 1.5em;
-    margin-bottom: 5px;
-}
-
-/*FIM DOBRA A ESCOLA*/
-
 /* INICIO DOBRA TUTOR */
 .main_tutor {
     width: 100%;
+    margin: 0 auto;
 }
 
 .main_tutor_content {
     background-color: darkcyan;
-    max-width: calc(1300px  - 80px);
+
+    width: 1400px;
     padding: 40px;
     margin: 0 auto;
-    color: #fff;
+    color: #0f2423;
     text-align: center;
 }
 
@@ -821,34 +654,15 @@ body {
 
 /*BARRA DE PESQUISA*/
 .topnav {
-    display: flex;
-    flex-basis: 30%;
-    justify-content: flex-end;
-    padding-right: 25px;
+    overflow: hidden;
+    background-color: none;
 }
 
 .topnav input[type=text] {
     float: right;
-    padding: 7px;
+    padding: 6px;
     border: darkcyan solid 2px;
     margin-top: 25px;
     margin-right: 16px;
     font-size: 17px;
-}
-
-.aa {
-    background: none;
-    border: none;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.infouser {
-    display: flex;
-}
-
-.infouser img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
 }
