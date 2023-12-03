@@ -1,14 +1,27 @@
 <?php
 session_start();
-
+$idusuario = $_SESSION['idusuario'];
+$inst = $_SESSION['instituicao'];
+require_once '../src/dao/usuariodao.php';
+$dao = new AlunoDAO();
+$usuario = $dao->getUsuarios($idusuario);
+$dbh = conexao::getConexao();
 if (isset($_SESSION["idusuario"])) {
     // print_r($_SESSION);
-    $Alunonome = $_SESSION['nome'];
+    if($_SESSION['status']=='0'){
+        header("location:../usuario/assinatura.php?msg=Assinatura Expirada");
+    }
 
-    $idAluno = $_SESSION['idusuario'];
-    $foto = '../' . $_SESSION['imagem'];
+    // $idAluno = $_SESSION['idusuario'];
+    $foto = '../' . $usuario['imagem'];
 }
 // var_dump($foto)
+
+$query = "SELECT * FROM midletech.foruns order by titulo limit 5;";
+
+$statement = $dbh->query($query);
+
+$foruns = $statement->rowCount();
 ?>
 
 <!DOCTYPE html>
@@ -22,6 +35,8 @@ if (isset($_SESSION["idusuario"])) {
     <!-- <link rel="stylesheet" href="../assets/css/login.css"> -->
     <link rel="stylesheet" href="../assets/css/style_options.css">
     <script src="../assets/js/menu.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 
     <title>MidleTech</title>
@@ -41,203 +56,203 @@ if (isset($_SESSION["idusuario"])) {
             </a>
 
             <nav class="nav_menu">
-                <ul>
-                    <div class="dropdown" data-dropdown>
-                        <button class="link" data-dropdown-button><?php echo $Alunonome; ?> <img class="fotoPerfil" src="<?php echo $foto; ?> "></button>
-                        <div class="dropdown_menu">
-                            <a href="../perfil/index.php">&nbsp;&nbsp;perfil</a>
 
-                            <a href="../login/logout.php">&nbsp;&nbsp;sair</a>
+                <ul>
+
+                    <ul>
+                        <?php if (($_SESSION['perfil'] == '3')) : ?>
+                            <?php
+                            $stmt = $dbh->prepare("SELECT * FROM midletech.instituicoes WHERE docente=?");
+
+                            $stmt->execute([$idusuario]);
+
+                            $verificardocente = $stmt->fetch();
+                            if ($verificardocente) {
+                                $idinst = $verificardocente['idinstituicoes'];
+                                if ($verificardocente) {
+
+                                    echo     '<li> <a href="../instituicao/cadastronoticias.php?id=' . $idinst . '">Postar Notícia</a></li>';
+                                    echo     '<li> <a href="../instituicao/noticias.php?id=' . $idinst . '">Ver Notícias</a></li>';
+                                    echo     '<li> <a href="../instituicao/instituicaodados.php">Minha Escola</a></li>';
+                                }
+                            } else {
+
+                                echo     '<li> <a href="../instituicao/cadastroinstituicao.php">Cadastrar Escola</a></li>';
+                            }
+                            ?>
+                        <?php endif ?>
+                        <?php if (($_SESSION['perfil'] == '2')) : ?>
+
+                             <li> <a href="../instituicao/noticias.php?id=<?=$inst?>">Ver Notícias</a></li>
+
+                            <?php endif ?>
+                        <?php if (($_SESSION['perfil'] == '1' || $_SESSION['perfil'] == '4')) : ?>
+                            <li> <a href="../instituicao/instituicoesnoticias.php">Notícias</a></li>
+                        <?php endif ?>
+                        <li><a href="../instituicao/index.php">Escolas</a></li>
+
+                        <?php if (($_SESSION['perfil'] == '1') || ($_SESSION['perfil'] == '3')) : ?>
+                            <li> <a href="../perfil/adm.php">ADMIN</a></li>
+                        <?php endif ?>
+                        <div class="dropdown" data-dropdown>
+                            <button class="link" data-dropdown-button><?php echo $usuario['nome']; ?> <div class="fotoPerfil"><img src="<?php echo $foto; ?> "></div></button>
+                            <div class="dropdown_menu">
+                                <a href="../perfil/index.php">&nbsp;&nbsp;Perfil</a>
+                                <a href="materialusuario.php">&nbsp;&nbsp;Meus Materiais</a>
+                                <a href="../perfil/foruns.php">&nbsp;&nbsp;Meus Fóruns</a>
+                                <a href="../login/logout.php">&nbsp;&nbsp;Sair</a>
+                            </div>
                         </div>
-                    </div>
-                </ul>
+                    </ul>
 
             </nav>
         </div>
     </header>
 
-    <main>
 
-        <div class="main_opc">
-            <section class="main_material">
-                <div class="main_material_content">
-                    <header class="main_blog_header">
-                        <h1 class="icon-blog">BIBLIOTECA</h1>
-                        <p>Encontre e compartilhe materiais com nossa comunidade!</p>
-                    </header>
-                    <header class="main_course_header"></header>
-                    <div class="alinhamento">
+    <div class="main_opc">
+        <section class="main_material">
+            <div class="main_material_content">
+                <header class="main_blog_header">
+                    <h1 class="icon-blog">MATERIAIS</h1>
+                    <p>Encontre e compartilhe materiais com nossa comunidade!</p>
+                </header>
+                <header class="main_course_header"></header>
+                <div class="alinhamento">
+                    <article>
+                        <h2>Artigos</h2>
+                        <header>
+                            <p align="center">
+                                <a href="artigos.php">
+                                    <img src="../assets/img/artigos.svg" alt="Artigos" title="Artigos" width="300" height="300">
+                                </a>
+                            </p>
+                        </header>
+                    </article>
+
+                    <article>
+                        <h2>Vídeos</h2>
+                        <header>
+                            <p align="center">
+                                <a href="videos.php">
+                                    <img src="../assets/img/videos.svg" alt="Vídeos" title="Vídeos" width="300" height="300">
+                                </a>
+                            </p>
+                        </header>
+                    </article>
+                    <article>
+                        <h2>Links</h2>
+                        <header>
+                            <p align="center">
+                                <a href="links.php">
+                                    <img src="../assets/img/links.svg" alt="Links" title="Links" width="300" height="300">
+                                </a>
+                            </p>
+                        </header>
+                    </article>
+
+
+                </div>
+
+            </div>
+            <div class="main_forum_content">
+                <header class="main_blog_header">
+                    <h1 class="icon-blog">Encontre Fóruns de Discussão</h1>
+                    <p>Aqui você encontra fóruns de discussão de diferentes temas que podem ser do seu interesse.</p>
+                </header>
+
+                <?php if ($foruns == "0"): ?>
                         <article>
-                            <h2>Artigos</h2>
-                            <header>
-                                <p align="center">
-                                    <a href="artigos.php">
-                                        <img src="../assets/img/artigos.svg" alt="Artigos" title="Artigos" width="300" height="300">
-                                    </a>
-                                </p>
-                            </header>
                         </article>
+                    <?php else: ?>
+                        <?php while ($row = $statement->fetch()): ?>
 
-                        <article>
-                            <h2>Vídeos</h2>
-                            <header>
-                                <p align="center">
-                                    <a href="videos.php">
-                                        <img src="../assets/img/videos.svg" alt="Vídeos" title="Vídeos" width="300" height="300">
-                                    </a>
-                                </p>
-                            </header>
-                        </article>
-                        <article>
-                            <h2>Links</h2>
-                            <header>
-                                <p align="center">
-                                    <a href="links.php">
-                                        <img src="../assets/img/links.svg" alt="Links" title="Links" width="300" height="300">
-                                    </a>
-                                </p>
-                            </header>
-                        </article>
+                            <?php if ($row['3'] == 'Ciência e Tecnologia Futurista') {
+                                $f_imagem = '../assets/img/ciencia.svg';
+                            } else if ($row['3'] == 'História e Genealogia') {
+                                $f_imagem = '../assets/img/historia.svg';
+                            } else if ($row['3'] == 'Desenvolvimento de Jogos') {
+                                $f_imagem = '../assets/img/games2.svg';
+                            } else if ($row['3'] == 'Desenvolvimento Pessoal') {
+                                $f_imagem = '../assets/img/desenvolvimento.svg';
+                            } else if ($row['3'] == 'Parentalidade e Família') {
+                                $f_imagem = '../assets/img/familia.svg';
+                            } else if ($row['3'] == 'Sustentabilidade e Meio Ambiente') {
+                                $f_imagem = '../assets/img/sustentabilidade.svg';
+                            } else if ($row['3'] == 'Jogos e Entretenimento') {
+                                $f_imagem = '../assets/img/games.svg';
+                            } else if ($row['3'] == 'Alimentação e Culinária') {
+                                $f_imagem = '../assets/img/culinaria.svg';
+                            } else if ($row['3'] == 'Política e Ativismo') {
+                                $f_imagem = '../assets/img/politica.svg';
+                            } else if ($row['3'] == 'Carreiras e Emprego') {
+                                $f_imagem = '../assets/img/carreira.svg';
+                            } else if ($row['3'] == 'Viagens e Aventura') {
+                                $f_imagem = '../assets/img/viagem.svg';
+                            } else if ($row['3'] == 'Educação e Aprendizado') {
+                                $f_imagem = '../assets/img/aprendizado.svg';
+                            } else if ($row['3'] == 'Física e Matemática') {
+                                $f_imagem = '../assets/img/fisica.svg';
+                            } else if ($row['3'] == 'Arte e Cultura') {
+                                $f_imagem = '../assets/img/art.svg';
+                            } else if ($row['3'] == 'Saúde e Bem-Estar') {
+                                $f_imagem = '../assets/img/saude.svg';
+                            } else if ($row['3'] == 'Tecnologia e Gadgets') {
+                                $f_imagem = '../assets/img/tecnologia.svg';
+                            }
 
 
+
+
+                            ?>
+
+
+
+                            <article>
+
+                                <form action="../forum/index.php" method="get">
+                                    <input type="hidden" value="<?php echo $row['0'] ?>" name=forumid>
+                                    <button value='submit' class="aa">
+                                        
+                                        <img src="<?php echo $f_imagem; ?>" width="" alt="Imagem post" title="Imagem Post"
+                                        width="350" height="200">
+                                        
+                                        <p class="category">
+                                            <?php echo $row['1']; ?>
+                                        </p>
+                                        <h2 class="title">
+                                            <?php echo $row['2']; ?>
+                                        </h2>
+                                    </button>
+                                </form>
+                                </article>
+
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+
+                <div class="formato_capa">
+                    <div class="capa">
+                        <div class="box2">
+                            <p><a href="foruns.php" class="btn">Mais Fóruns</a></p>
+                        </div>
                     </div>
-
                 </div>
-                <div class="main_forum_content">
-                    <header class="main_blog_header">
-                        <h1 class="icon-blog">Encontre Fóruns de Discussão</h1>
-                        <p>Aqui você encontra fóruns de discussão de diferentes temas que podem ser do seu interesse.</p>
-                    </header>
-
-                    <article>
-                        <a href="#">
-                            <img src="../assets/img/tecnologia.svg" width="200" alt="Imagem post" title="Imagem Post" width="350" height="200">
-                        </a>
-                        <p><a href="" class="category">Tecnologia e Gadgets</a></p>
-                        <h2><a href="" class="title">Discussões osbre as últimas tendências em tecnologia, gadgets e software. Resolução de problemas técnicos. Avaliação de produtos Eletrônicos.</a></h2>
-                    </article>
-
-                    <article>
-                        <a href="#">
-                            <img src="../assets/img/saude.svg" width="200" alt="Imagem post" title="Imagem Post" width="350" height="200">
-                        </a>
-                        <p><a href="" class="category">Saúde e Bem-Estar</a></p>
-                        <h2><a href="" class="title">Tópicos relacionados à saúde e bem-estar, incluindo exercícios, dietas saudáveis, e gerenciamento do estresse. Buscando promover um estilo de vida saudável e equilibrado.</a></h2>
-                    </article>
-
-                    <article>
-                        <a href="#">
-                            <img src="../assets/img/art.svg" width="200" alt="Imagem post" title="Imagem Post" width="350" height="200">
-                        </a>
-                        <p><a href="" class="category">Arte e Cultura</a></p>
-                        <h2><a href="" class="title"> Espaço dedicado à apreciação crítica de obras de arte, filmes, música e literatura. Incentivando o compartilhamento de projetos de arte e fomentando a criação colaborativa entre nossos membros. Promoção de debates animados sobre cultura pop e as tendências mais recentes.</a></h2>
-                    </article>
-
-                    <article>
-                        <a href="#">
-                            <img src="../assets/img/fisica.svg" width="" alt="Imagem post" title="Imagem Post" width="350" height="200">
-                        </a>
-                        <p><a href="" class="category">Física e Matemática</a></p>
-                        <h2><a href="" class="title">Debates estimulantes sobre teorias, fórmulas e problemas matemáticos, assim como discutir os princípios fundamentais da física.</a></h2>
-                    </article>
-
-                    <article>
-                        <a href="#">
-                            <img src="../assets/img/aprendizado.svg" width="" alt="Imagem post" title="Imagem Post" width="350" height="200">
-                        </a>
-                        <p><a href="" class="category">Educação e Aprendizado</a></p>
-                        <h2><a href="" class="title">Promove debates sobre métodos de estudo eficazes para melhorar o desempenho acadêmico. Apoio a estudantes que enfrentam dificuldades em suas jornadas educacionais.</a></h2>
-                    </article>
-
-                    <article>
-                        <a href="#">
-                            <img src="../assets/img/viagem.svg" width="" alt="Imagem post" title="Imagem Post" width="350" height="200">
-                        </a>
-                        <p><a href="" class="category">Viagens e Aventura</a></p>
-                        <h2><a href="" class="title">Os membros compartilham dicas de viagem, recomendam destinos e compartilham relatos de suas experiências. Planejamento de viagens em grupo para que você possa explorar o mundo com outros entusiastas de viagens.</a></h2>
-                    </article>
-
-                    <article>
-                        <a href="#">
-                            <img src="../assets/img/carreira.svg" width="" alt="Imagem post" title="Imagem Post" width="350" height="200">
-                        </a>
-                        <p><a href="" class="category">Carreiras e Emprego</a></p>
-                        <h2><a href="" class="title"> Recurso para orientação de carreira e desenvolvimento profissional. Aqui, você encontrará ofertas de emprego e oportunidades de freelancers para impulsionar sua trajetória profissional. Promove discussões sobre entrevistas, técnicas de networking e estratégias para avançar em sua carreira.</a></h2>
-                    </article>
-
-                    <article>
-                        <a href="#">
-                            <img src="../assets/img/politica.svg" width="" alt="Imagem post" title="Imagem Post" width="350" height="200">
-                        </a>
-                        <p><a href="" class="category">Política e Ativismo</a></p>
-                        <h2><a href="" class="title">Os membros participam de debates envolventes sobre questões políticas locais e globais, colaboram na organização de eventos e campanhas de conscientização e exploram debates éticos e morais.</a></h2>
-                    </article>
-                    <article>
-                        <a href="#">
-                            <img src="../assets/img/culinaria.svg" width="200" alt="Imagem post" title="Imagem Post" width="350" height="200">
-                        </a>
-                        <p><a href="" class="category">Alimentação e Culinária</a></p>
-                        <h2><a href="" class="title">Compartilhamento de receitas deliciosas e técnicas de cozinha. Avaliações de restaurantes e pratos, ajuda para escolher os melhores locais para suas refeições fora de casa. Incentiva discussões sobre dietas especiais, como vegetarianismo e paleo, para ajudá-lo a encontrar opções que atendam às suas preferências alimentares.</a></h2>
-                    </article>
-
-                    <article>
-                        <a href="#">
-                            <img src="../assets/img/games.svg" width="200" alt="Imagem post" title="Imagem Post" width="350" height="200">
-                        </a>
-                        <p><a href="" class="category">Jogos e Entretenimento</a></p>
-                        <h2><a href="" class="title">Conversas animadas sobre seus jogos favoritos, ler análises detalhadas e ficar por dentro dos torneios mais recentes. Comunidades de fãs de filmes, séries e livros para aqueles que desejam compartilhar e discutir sobre.</a></h2>
-                    </article>
-
-                    <article>
-                        <a href="#">
-                            <img src="../assets/img/sustentabilidade.svg" width="200" alt="Imagem post" title="Imagem Post" width="350" height="200">
-                        </a>
-                        <p><a href="" class="category">Sustentabilidade e Meio Ambiente</a></p>
-                        <h2><a href="" class="title">Debates sobre práticas sustentáveis e a redução de resíduos, ficar atualizado com notícias ambientais e descobrir projetos comunitários de conservação.</a></h2>
-                    </article>
-
-                    <article>
-                        <a href="#">
-                            <img src="../assets/img/familia.svg" width="" alt="Imagem post" title="Imagem Post" width="350" height="200">
-                        </a>
-                        <p><a href="" class="category">Parentalidade e Família</a></p>
-                        <h2><a href="" class="title">Espaço acolhedor para pais e mães com compartilhamento de dicas valiosas para a jornada da parentalidade. Apoio dedicado a famílias com crianças com necessidades especiais. Também promove discussões significativas sobre gravidez e parto.</a></h2>
-                    </article>
-
-                    <article>
-                        <a href="#">
-                            <img src="../assets/img/desenvolvimento.svg" width="" alt="Imagem post" title="Imagem Post" width="350" height="200">
-                        </a>
-                        <p><a href="" class="category">Desenvolvimento Pessoal</a></p>
-                        <h2><a href="" class="title">Técnicas de autoajuda, histórias inspiradoras de superação e grupos de apoio para lidar com desafios pessoais.</a></h2>
-                    </article>
-
-                    <article>
-                        <a href="#">
-                            <img src="../assets/img/games2.svg" width="" alt="Imagem post" title="Imagem Post" width="350" height="200">
-                        </a>
-                        <p><a href="" class="category">Desenvolvimento de Jogos</a></p>
-                        <h2><a href="" class="title">Discussões sobre seus projetos, onde pode receber feedback valioso. Espaço para o compartilhamento de recursos e tutoriais que ajudarão a impulsionar seu desenvolvimento de jogos, aprimore suas habilidades de desenvolvimento.</a></h2>
-                    </article>
-
-                    <article>
-                        <a href="#">
-                            <img src="../assets/img/historia.svg" width="" alt="Imagem post" title="Imagem Post" width="350" height="200">
-                        </a>
-                        <p><a href="" class="category">História e Genealogia</a></p>
-                        <h2><a href="" class="title">Discussões envolventes sobre eventos históricos e genealogia familiar. Oferece ajuda e orientação para pesquisas de árvores genealógicas e registros históricos.</a></h2>
-                    </article>
-
-                    <article>
-                        <a href="#">
-                            <img src="../assets/img/ciencia.svg" width="" alt="Imagem post" title="Imagem Post" width="350" height="200">
-                        </a>
-                        <p><a href="" class="category">Ciência e Tecnologia Futurista</a></p>
-                        <h2><a href="" class="title">Conversas estimulantes sobre avanços científicos e tecnológicos futuros. Especulações envolventes sobre o destino da humanidade e o papel da tecnologia nesse cenário.</a></h2>
-                    </article>
-                </div>
-            </section>
-        </div>
+            </div>
+        </section>
+    </div>
     </main>
+    </script>
+    <?php
+    if (isset($_GET['error']) || isset($_GET['msg'])) { ?>
+        <script>
+            Swal.fire({
+                icon: '<?php echo (isset($_GET['error']) ? 'error' : 'msg'); ?>',
+                title: 'material',
+                text: '<?php echo (isset($_GET['error']) ? $_GET['error'] : $_GET['msg']); ?>',
+            })
+        </script>
+    <?php } ?>
 
+    <main>
 </body>
+<?php $dbh = null; ?>

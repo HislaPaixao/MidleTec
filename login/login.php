@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../assets/css/boot.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/login.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
     <title>login</title>
 </head>
@@ -21,11 +23,24 @@
             <a href="../index.php" class="logo"><img src="../assets/img/logo.png" alt="logo" class="logo_img"></a>
             <div class="spacer"></div>
             <nav class="nav_menu">
+            <ul> 
 
+            <li><a href="../index.php">Voltar</a></li>
+
+            </ul>
             </nav>
         </div>
     </header>
-
+    <?php
+if(isset($_GET['error']) || isset($_GET['msg']) ) { ?>
+            <script>
+                Swal.fire({
+                icon: '<?php echo (isset($_GET['error']) ? 'error' : 'msg');?>',
+                title: 'Login',
+                text: '<?php echo (isset($_GET['error']) ? $_GET['error']: $_GET['msg']); ?>',
+                })
+            </script>
+        <?php } ?>
     <main class="login">
 
         <div class="main_login">
@@ -37,7 +52,7 @@
                             <h1>Login</h1>
                         </div>
                         <div class="main_login_input">
-                            <input type="text" name="matricula" placeholder="Matrícula Aluno" class="size">
+                            <input type="text" name="email" placeholder="Email" class="size">
                             <input type="password" name="senha" placeholder="Senha" class="size">
                         </div>
                         <button type="submit"><b>Entrar</b></button>

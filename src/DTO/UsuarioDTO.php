@@ -2,6 +2,7 @@
 class UsuarioDTO
 {
 private $imagem;
+private $docmatricula;
 
 
 function setImagem($imagem)
@@ -13,5 +14,15 @@ function setImagem($imagem)
     {
         return $this->imagem;
     }
+    function setdocmatricula($docmatricula)
+    {
+        $this->docmatricula = $docmatricula;
+    }
+
+    function getdocmatricula()
+    {
+        return $this->docmatricula;
+    }
+
 
 }
