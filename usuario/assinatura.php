@@ -11,10 +11,7 @@
     <link rel="stylesheet" href="../assets/css/style_options.css">
     <script src="../assets/js/menu.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
-
-    <title>MidleTech</title>
+    <title>Planos</title>
 </head>
 
 <body>
@@ -42,28 +39,39 @@
             <section class="main_material">
                 <div class="main_material_content">
                     <header class="main_blog_header">
-                        <h1 class="icon-blog">CADASTRO</h1>
-                        <p>Você é:</p>
+                        <h1 class="icon-blog">ASSINATURA</h1>
+                        <p>Conheça melhor nossos planos:</p>
                     </header>
                     <header class="main_course_header"></header>
                     <div class="alinhamento">
                         <article>
-                            <h2>Docente</h2>
+                            <h2>Mensal</h2>
                             <header>
                                 <p align="center">
-                                    <a href="cadastrodocente.php">
-                                        <img src="../assets/img/docente.svg" alt="docente" title="docente" width="300" height="300">
+                                    <a href="cadastroaluno_assinante.php">
+                                        <img src="../assets/img/mensal.svg" alt="mensal" title="mensal" width="300" height="300">
                                     </a>
                                 </p>
                             </header>
                         </article>
 
                         <article>
-                            <h2>Aluno</h2>
+                            <h2>Semestral</h2>
                             <header>
                                 <p align="center">
                                     <a href="cadastroaluno.php">
-                                        <img src="../assets/img/cadastro.svg" alt="aluno" title="aluno" width="300" height="300">
+                                        <img src="../assets/img/semestral.svg" alt="semestral" title="semestral" width="300" height="300">
+                                    </a>
+                                </p>
+                            </header>
+                        </article>
+
+                        <article>
+                            <h2>Anual</h2>
+                            <header>
+                                <p align="center">
+                                    <a href="cadastroaluno.php">
+                                        <img src="../assets/img/anual.svg" alt="anual" title="anual" width="300" height="300">
                                     </a>
                                 </p>
                             </header>
